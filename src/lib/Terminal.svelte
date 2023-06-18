@@ -1,5 +1,17 @@
-<script>
+<script lang="ts">
+  import InputForm from "./InputForm.svelte";
+  import type { Command } from "./types";
+
   let host = window.location.hostname;
+  export let commands: Command[];
+
+  let input = "";
+  const handleInput = (event) => {
+    input = event.target.value.trim();
+  };
+  const handleKeyDown = (event) => {};
+
+  $: console.log(input);
 </script>
 
 <div id="terminal-container">
@@ -15,21 +27,7 @@
   </div>
 
   <div class="terminal-body">
-    <form class="input-form">
-      <label for="terminal-input">
-        <span class="label-text">
-          <span class="name">dim</span>@<span class="host">{host}</span>:~$
-        </span>
-      </label>
-      <input
-        id="terminal-input"
-        title="Terminal Input"
-        type="text"
-        autocomplete="off"
-        spellcheck="false"
-        autocapitalize="off"
-      />
-    </form>
+    <InputForm {host} {input} {handleInput} {handleKeyDown} />
   </div>
 </div>
 
@@ -89,33 +87,5 @@
     margin-top: 0.5rem;
   }
 
-  .input-form {
-    display: flex;
-  }
-
-  .label-text {
-    margin-right: 0.75rem;
-  }
-
-  #terminal-input {
-    font-size: initial;
-    flex-grow: 1;
-    background-color: var(--background-color-dark);
-    caret-color: var(--color-primary);
-    border: none;
-    overflow: hidden;
-  }
-
-  #terminal-input:focus {
-    outline: none;
-  }
-
-  .name {
-    color: var(--color-primary);
-  }
-
-  .host {
-    color: var(--color-secondary);
-  }
   /* Terminal body END */
 </style>

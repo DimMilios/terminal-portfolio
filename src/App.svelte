@@ -1,9 +1,16 @@
-<script>
+<script lang="ts">
   import Terminal from "./lib/Terminal.svelte";
+  import type { Command } from "./lib/types";
+
+  const commands: Command[] = [
+    { command: "help", description: "help" },
+    { command: "about", description: "about" },
+    { command: "welcome", description: "welcome" },
+  ];
 </script>
 
 <main>
-  <Terminal />
+  <Terminal {commands} />
 </main>
 
 <style>
