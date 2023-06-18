@@ -37,17 +37,11 @@
   #terminal-container {
     margin-top: 2rem;
     border-radius: 5px;
+    min-height: 70vh;
     background-color: var(--background-color-dark);
   }
 
-  .terminal-body {
-    display: flex;
-    flex-direction: column-reverse;
-    overflow-y: auto;
-    padding: 0 1rem;
-    margin-top: 0.5rem;
-  }
-
+  /* Terminal header BEGIN */
   .terminal-header {
     display: flex;
     align-items: center;
@@ -84,6 +78,16 @@
     display: flex;
     justify-content: center;
   }
+  /* Terminal header END */
+
+  /* Terminal body BEGIN */
+  .terminal-body {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    padding: 0 1rem;
+    margin-top: 0.5rem;
+  }
 
   .input-form {
     display: flex;
@@ -99,6 +103,7 @@
     background-color: var(--background-color-dark);
     caret-color: var(--color-primary);
     border: none;
+    overflow: hidden;
   }
 
   #terminal-input:focus {
@@ -112,4 +117,5 @@
   .host {
     color: var(--color-secondary);
   }
+  /* Terminal body END */
 </style>
