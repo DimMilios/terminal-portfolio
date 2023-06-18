@@ -24,9 +24,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  overflow: hidden;
+}
+
 #app {
   max-width: 1080px;
   margin: 0 auto;
-  /* padding: 2rem; */
-  text-align: center;
 }

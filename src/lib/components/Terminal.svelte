@@ -1,6 +1,6 @@
 <script lang="ts">
   import InputForm from "./InputForm.svelte";
-  import type { Command } from "./types";
+  import type { Command } from "../types";
 
   let host = window.location.hostname;
   export let commands: Command[];
@@ -35,7 +35,7 @@
   #terminal-container {
     margin-top: 2rem;
     border-radius: 5px;
-    min-height: 70vh;
+    min-height: 90vh;
     background-color: var(--background-color-dark);
   }
 
@@ -85,7 +85,27 @@
     overflow-y: auto;
     padding: 0 1rem;
     margin-top: 0.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
+  .terminal-body::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  .terminal-body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--scroll-color);
+    border-radius: 60px;
+  }
+
+  .terminal-body::-webkit-scrollbar-thumb {
+    border-radius: 60px;
+    background-color: var(--text-color-200);
+  }
+
+  .terminal-body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color-100);
+  }
   /* Terminal body END */
 </style>

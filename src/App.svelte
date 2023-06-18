@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Terminal from "./lib/Terminal.svelte";
+  import Terminal from "./lib/components/Terminal.svelte";
   import type { Command } from "./lib/types";
 
   const commands: Command[] = [

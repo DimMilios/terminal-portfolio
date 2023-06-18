@@ -1,9 +1,24 @@
 <script>
+  import { onMount } from "svelte";
+
   export let host;
   export let input;
 
   export let handleInput;
   export let handleKeyDown;
+
+  let inputRef;
+  let handleGlobalClick = () => {
+    inputRef?.focus();
+  };
+
+  onMount(() => {
+    document.addEventListener("click", handleGlobalClick);
+
+    return () => {
+      document.removeEventListener("click", handleGlobalClick);
+    };
+  });
 </script>
 
 <form class="input-form" on:submit|preventDefault>
@@ -19,6 +34,8 @@
     autocomplete="off"
     spellcheck="false"
     autocapitalize="off"
+    value={input}
+    bind:this={inputRef}
     on:input={handleInput}
     on:keydown={handleKeyDown}
   />
