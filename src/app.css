@@ -1,0 +1,32 @@
+:root {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 500;
+  font-size: large;
+
+  --background-color-dark: #101116;
+  --background-color-light-dark: rgba(40, 40, 40, 0.8);
+  --color-primary: #00ff9c;
+  --color-secondary: #60fdff;
+  --text-color-100: #ffffff;
+  --text-color-200: #c7c7c7;
+  --text-color-300: #76ff9f;
+  --scroll-color: #424242;
+  --scroll-hover-color: #424242;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--background-color-light-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+#app {
+  max-width: 1080px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
