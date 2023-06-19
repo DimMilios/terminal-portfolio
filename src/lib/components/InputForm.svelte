@@ -2,10 +2,11 @@
   import { onMount } from "svelte";
 
   export let host;
-  export let input;
+  export let input = "";
 
   export let handleInput;
   export let handleKeyDown;
+  export let handleSubmit;
 
   let inputRef;
   let handleGlobalClick = () => {
@@ -21,7 +22,7 @@
   });
 </script>
 
-<form class="input-form" on:submit|preventDefault>
+<form class="input-form" on:submit={handleSubmit}>
   <label for="terminal-input">
     <span class="label-text">
       <span class="name">dim</span>@<span class="host">{host}</span>:~$
@@ -44,6 +45,7 @@
 <style>
   .input-form {
     display: flex;
+    align-items: center;
   }
 
   .label-text {
@@ -51,7 +53,11 @@
   }
 
   #terminal-input {
-    font-size: initial;
+    font-size: 100%;
+    font-family: "Inconsolata", monospace;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
     flex-grow: 1;
     background-color: var(--background-color-dark);
     caret-color: var(--color-primary);

@@ -1,17 +1,26 @@
 <script lang="ts">
   import InputForm from "./InputForm.svelte";
-  import type { Command } from "../types";
+  import type { Command, CommandKey } from "../types";
+  import Output from "./Output.svelte";
 
   let host = window.location.hostname;
   export let commands: Command[];
+  let commandHistory: CommandKey[] = [];
 
-  let input = "";
+  let input: string;
   const handleInput = (event) => {
     input = event.target.value.trim();
   };
   const handleKeyDown = (event) => {};
 
-  $: console.log(input);
+  let command: CommandKey;
+  const handleSubmit = (event: SubmitEvent) => {
+    event.preventDefault();
+    command = input as CommandKey;
+    input = "";
+    commandHistory.unshift(command);
+    commandHistory = commandHistory;
+  };
 </script>
 
 <div id="terminal-container">
@@ -27,7 +36,17 @@
   </div>
 
   <div class="terminal-body">
-    <InputForm {host} {input} {handleInput} {handleKeyDown} />
+    <InputForm {host} {input} {handleInput} {handleKeyDown} {handleSubmit} />
+
+    {#each commandHistory as ch}
+      <Output command={ch} />
+      <div class="old-command">
+        <span class="label-text">
+          <span class="name">dim</span>@<span class="host">{host}</span>:~$
+        </span>
+        <span id="command-text">{ch}</span>
+      </div>
+    {/each}
   </div>
 </div>
 
@@ -106,6 +125,31 @@
 
   .terminal-body::-webkit-scrollbar-thumb:hover {
     background-color: var(--text-color-100);
+  }
+
+  .label-text {
+    margin-right: 0.75rem;
+  }
+
+  .old-command {
+    display: flex;
+    align-items: center;
+  }
+
+  #command-text {
+    flex-grow: 1;
+    background-color: var(--background-color-dark);
+    caret-color: var(--color-primary);
+    border: none;
+    overflow: hidden;
+  }
+
+  .name {
+    color: var(--color-primary);
+  }
+
+  .host {
+    color: var(--color-secondary);
   }
   /* Terminal body END */
 </style>
