@@ -45,3 +45,8 @@ If you have state that's important to retain within a component, consider creati
 import { writable } from 'svelte/store'
 export default writable(0)
 ```
+
+## Credits
+- [Terminal UI by Sat Naing](https://terminal.satnaing.dev/)
+- [Mac terminal design](https://codepen.io/tsq/pen/JjovJWy)
+- [Text to ASCII Art Generator](https://patorjk.com/software/taag)
