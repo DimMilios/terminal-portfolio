@@ -4,10 +4,11 @@ export type CommandKey = "help"
   | "education"
   | "projects"
   | "links"
-  | "contact";
+  | "contact"
+  | "clear";
 
 
-export const COMMAND_KEY_LIST = ["help", "welcome", "about", "education", "projects", "links", "contact"];
+export const COMMAND_KEY_LIST = ["help", "welcome", "about", "education", "projects", "links", "contact", "clear"];
 
 export type Command = {
   command: CommandKey;

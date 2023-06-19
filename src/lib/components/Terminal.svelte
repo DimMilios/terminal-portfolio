@@ -7,17 +7,30 @@
   export let commands: Command[];
   let commandHistory: CommandKey[] = [];
 
-  let input: string;
-  const handleInput = (event) => {
-    input = event.target.value.trim();
+  const clearCommands = () => {
+    commandHistory = [];
   };
-  const handleKeyDown = (event) => {};
+
+  let input: string;
+  const handleKeyDown = (event: KeyboardEvent) => {
+    let key = event.key.toLowerCase();
+    if (event.ctrlKey && key === "l") {
+      event.preventDefault();
+      clearCommands();
+    }
+  };
 
   let command: CommandKey;
   const handleSubmit = (event: SubmitEvent) => {
     event.preventDefault();
-    command = input as CommandKey;
+    command = input.trim() as CommandKey;
+
     input = "";
+    if (command === "clear") {
+      clearCommands();
+      return;
+    }
+
     commandHistory.unshift(command);
     commandHistory = commandHistory;
   };
@@ -36,7 +49,7 @@
   </div>
 
   <div class="terminal-body">
-    <InputForm {host} {input} {handleInput} {handleKeyDown} {handleSubmit} />
+    <InputForm bind:input {host} {handleKeyDown} {handleSubmit} />
 
     {#each commandHistory as ch}
       <Output command={ch} />

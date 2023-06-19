@@ -4,7 +4,6 @@
   export let host;
   export let input = "";
 
-  export let handleInput;
   export let handleKeyDown;
   export let handleSubmit;
 
@@ -35,9 +34,8 @@
     autocomplete="off"
     spellcheck="false"
     autocapitalize="off"
-    value={input}
+    bind:value={input}
     bind:this={inputRef}
-    on:input={handleInput}
     on:keydown={handleKeyDown}
   />
 </form>

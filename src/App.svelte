@@ -10,6 +10,7 @@
     { command: "projects", description: "projects" },
     { command: "links", description: "links" },
     { command: "contact", description: "contact" },
+    { command: "clear", description: "clear" },
   ];
 </script>
 
