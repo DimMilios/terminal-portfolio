@@ -4,7 +4,6 @@
   import Output from "./Output.svelte";
 
   let host = window.location.hostname;
-  export let commands: Command[];
   let commandHistory: CommandKey[] = [];
 
   const clearCommands = () => {
