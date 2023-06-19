@@ -32,3 +32,19 @@ body {
   max-width: 1080px;
   margin: 0 auto;
 }
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.link-secondary {
+  color: var(--color-secondary);
+  border-bottom: 2px dashed var(--color-secondary);
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link-secondary:hover {
+  border-bottom-style: solid;
+}

@@ -4,8 +4,12 @@
 
   const commands: Command[] = [
     { command: "help", description: "help" },
-    { command: "about", description: "about" },
     { command: "welcome", description: "welcome" },
+    { command: "about", description: "about" },
+    { command: "education", description: "education" },
+    { command: "projects", description: "projects" },
+    { command: "links", description: "links" },
+    { command: "contact", description: "contact" },
   ];
 </script>
 
