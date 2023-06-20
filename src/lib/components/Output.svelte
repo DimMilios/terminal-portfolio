@@ -3,6 +3,7 @@
   import Help from "../commands/Help.svelte";
   import Welcome from "../commands/Welcome.svelte";
   import type { CommandKey } from "../types";
+  import About from "../commands/About.svelte";
 
   type Option = {
     command: CommandKey;
@@ -14,10 +15,10 @@
   const options: Option[] = [
     { command: "help", component: Help },
     { command: "welcome", component: Welcome },
+    { command: "about", component: About },
     { command: "", component: null },
   ];
 
-  let selected: Option;
   $: selected = options.find((c) => c.command === command) ?? options[0];
 </script>
 
