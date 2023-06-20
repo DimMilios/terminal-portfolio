@@ -54,7 +54,7 @@
       <div class="btn-round green" />
     </div>
     <div class="terminal-header-text">
-      <span>root@macbook</span>
+      <span>visitor@{host}</span>
     </div>
   </div>
 
@@ -118,6 +118,12 @@
     display: flex;
     justify-content: center;
   }
+
+  @media screen and (min-width: 450px) {
+    .terminal-header-text > span {
+      transform: translateX(-20%);
+    }
+  }
   /* Terminal header END */
 
   /* Terminal body BEGIN */
@@ -125,9 +131,9 @@
     display: flex;
     flex-direction: column-reverse;
     overflow-y: auto;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
     margin-top: 0.5rem;
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: auto;
     overflow-x: hidden;
   }

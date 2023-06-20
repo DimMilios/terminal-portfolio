@@ -32,7 +32,7 @@
     white-space: pre;
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 450px) {
     .name {
       font-size: 10px;
     }
