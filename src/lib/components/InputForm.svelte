@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { COMMAND_KEY_LIST } from "../types";
+  import { closest } from "../util";
 
   export let host: string;
   export let input = "";
@@ -13,29 +12,10 @@
     inputRef?.focus();
   };
 
-  onMount(() => {
-    document.addEventListener("click", handleGlobalClick);
-
-    return () => {
-      document.removeEventListener("click", handleGlobalClick);
-    };
-  });
-
-  const closest = (query: string) => {
-    let candidate: string | undefined;
-    for (let command of COMMAND_KEY_LIST) {
-      if (command.startsWith(query)) {
-        if (!candidate || command.length < candidate.length) {
-          candidate = command;
-        }
-      }
-    }
-
-    return candidate;
-  };
-
   $: suggestion = closest(input) ?? "";
 </script>
+
+<svelte:document on:click={handleGlobalClick} />
 
 <form class="input-form" on:submit={handleSubmit}>
   <label for="terminal-input">

@@ -10,6 +10,7 @@
 </ul>
 
 <div class="keybinds">
+  <span>Tab</span><span>=&gt; autocompletes the command</span>
   <span>Ctrl + l</span><span>=&gt; clear the terminal</span>
 </div>
 
@@ -37,5 +38,6 @@
     color: var(--text-color-100);
     display: grid;
     grid-template-columns: 12ch 1fr;
+    row-gap: 0.2rem;
   }
 </style>

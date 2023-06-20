@@ -1,7 +1,8 @@
 <script lang="ts">
   import InputForm from "./InputForm.svelte";
-  import type { Command, CommandKey } from "../types";
+  import type { CommandKey } from "../types";
   import Output from "./Output.svelte";
+  import { closest, isValidCommand } from "../util";
 
   let host = window.location.hostname;
   let commandHistory: CommandKey[] = ["welcome"];
@@ -16,6 +17,16 @@
     if (event.ctrlKey && key === "l") {
       event.preventDefault();
       clearCommands();
+    }
+
+    if (key === "tab") {
+      event.preventDefault();
+      event.stopPropagation();
+
+      let command = closest(input);
+      if (isValidCommand(command)) {
+        input = command;
+      }
     }
   };
 
