@@ -4,6 +4,8 @@
   import Welcome from "../commands/Welcome.svelte";
   import type { CommandKey } from "../types";
   import About from "../commands/About.svelte";
+  import Links from "../commands/Links.svelte";
+  import Education from "../commands/Education.svelte";
 
   type Option = {
     command: CommandKey;
@@ -16,6 +18,8 @@
     { command: "help", component: Help },
     { command: "welcome", component: Welcome },
     { command: "about", component: About },
+    { command: "links", component: Links },
+    { command: "education", component: Education },
     { command: "", component: null },
   ];
 
