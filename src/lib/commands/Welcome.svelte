@@ -31,4 +31,10 @@
   .name {
     white-space: pre;
   }
+
+  @media screen and (max-width: 400px) {
+    .name {
+      font-size: 10px;
+    }
+  }
 </style>

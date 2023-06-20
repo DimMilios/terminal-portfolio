@@ -118,6 +118,7 @@
     margin-top: 0.5rem;
     max-height: 90vh;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .terminal-body::-webkit-scrollbar {
