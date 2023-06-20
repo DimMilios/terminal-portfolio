@@ -1,7 +1,6 @@
 :root {
-  font-family: 'Inconsolata', monospace;
-  font-weight: 500;
-  font-size: large;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
 
   --background-color-dark: #101116;
   --background-color-light-dark: rgba(40, 40, 40, 0.8);

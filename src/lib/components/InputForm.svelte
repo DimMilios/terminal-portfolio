@@ -57,8 +57,8 @@
 
   #terminal-input {
     font-size: 100%;
-    font-family: "Inconsolata", monospace;
-    font-weight: 500;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
     margin: 0;
     padding: 0;
     background: none;

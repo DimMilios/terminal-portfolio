@@ -34,7 +34,7 @@
 
   @media screen and (max-width: 450px) {
     .name {
-      font-size: 10px;
+      font-size: 9px;
     }
   }
 </style>
