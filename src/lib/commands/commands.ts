@@ -4,7 +4,7 @@ export const commands: Command[] = [
   { command: "help", description: "list available commands" },
   { command: "welcome", description: "display welcome message" },
   { command: "about", description: "about Dimitris Milios" },
-  { command: "education", description: "my education background" },
+  { command: "education", description: "check my education background and certifications" },
   { command: "projects", description: "show my coding projects" },
   { command: "links", description: "check out social media and GitHub accounts" },
   { command: "contact", description: "check ways to get in touch with me" },
