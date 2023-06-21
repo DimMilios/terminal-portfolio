@@ -6,6 +6,7 @@
   import About from "../commands/About.svelte";
   import Links from "../commands/Links.svelte";
   import Education from "../commands/Education.svelte";
+  import Contact from "../commands/Contact.svelte";
 
   type Option = {
     command: CommandKey;
@@ -20,6 +21,7 @@
     { command: "about", component: About },
     { command: "links", component: Links },
     { command: "education", component: Education },
+    { command: "contact", component: Contact },
     { command: "", component: null },
   ];
 
