@@ -1,6 +1,12 @@
 <script lang="ts">
   import { commands } from "./commands";
+
+  export let props;
 </script>
+
+{#if "error" in props}
+  <p class="error">{props.error}</p>
+{/if}
 
 <ul>
   {#each commands as { command, description }}
@@ -39,5 +45,10 @@
     display: grid;
     grid-template-columns: 12ch 1fr;
     row-gap: 0.2rem;
+  }
+
+  .error {
+    margin-top: 0;
+    color: var(--text-error);
   }
 </style>

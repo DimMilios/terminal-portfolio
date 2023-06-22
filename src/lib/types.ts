@@ -6,10 +6,12 @@ export type CommandKey = "help"
   | "links"
   | "contact"
   | "clear"
-  | ""
+  | "experience"
+  | "skills"
+  | "";
 
 
-export const COMMAND_KEY_LIST = ["help", "welcome", "about", "education", "projects", "links", "contact", "clear", ""];
+export const COMMAND_KEY_LIST = ["help", "welcome", "about", "education", "projects", "links", "contact", "clear", "experience", "skills", ""];
 
 export type Command = {
   command: CommandKey;
