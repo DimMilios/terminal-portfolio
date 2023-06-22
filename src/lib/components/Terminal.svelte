@@ -75,10 +75,25 @@
 
 <style>
   #terminal-container {
-    margin-top: 2rem;
+    margin-top: 0;
     border-radius: 5px;
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: var(--background-color-dark);
+  }
+
+  /* For large desktop/laptop screens */
+  @media (min-width: 1200px) {
+    #terminal-container {
+      margin-top: 2rem;
+      border-radius: 5px;
+      min-height: 90vh;
+      background-color: var(--background-color-dark);
+    }
+
+    .terminal-body {
+      max-height: 85vh !important;
+      padding: 1rem !important;
+    }
   }
 
   /* Terminal header BEGIN */
@@ -133,13 +148,13 @@
     overflow-y: auto;
     padding: 0.5rem 1rem;
     margin-top: 0.5rem;
-    max-height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
     overflow-x: hidden;
   }
 
   .terminal-body::-webkit-scrollbar {
-    width: 0.4rem;
+    width: 0.6rem;
   }
 
   .terminal-body::-webkit-scrollbar-track {
