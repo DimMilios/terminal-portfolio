@@ -96,6 +96,13 @@
     }
   }
 
+  @media screen and (orientation: landscape) {
+    .terminal-body {
+      max-height: 80vh !important;
+      padding: 1rem !important;
+    }
+  }
+
   /* Terminal header BEGIN */
   .terminal-header {
     display: flex;
