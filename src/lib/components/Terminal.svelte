@@ -3,6 +3,7 @@
   import type { CommandKey } from "../types";
   import Output from "./Output.svelte";
   import { closest, isValidCommand } from "../util";
+  import { fullScreen } from "../stores";
 
   let host = window.location.hostname;
   let commandHistory: CommandKey[] = ["welcome"];
@@ -44,21 +45,38 @@
     commandHistory.unshift(command);
     commandHistory = commandHistory;
   };
+
+  const handleMinimize = () => {
+    $fullScreen = false;
+  };
+  const handleExpand = () => {
+    $fullScreen = true;
+  };
 </script>
 
-<div id="terminal-container">
+<div id="terminal-container" class:minimized-container={!$fullScreen}>
   <div class="terminal-header">
     <div class="buttons">
-      <div class="btn-round red" />
-      <div class="btn-round yellow" />
-      <div class="btn-round green" />
+      <button class="btn-round red" />
+      <button
+        class="btn-round window-controls yellow"
+        class:pulse={window.screen.width >= 1200}
+        on:click={handleMinimize}
+        title="Minimize"
+      />
+      <button
+        class="btn-round window-controls green"
+        class:pulse={window.screen.width >= 1200}
+        on:click={handleExpand}
+        title="Maximize"
+      />
     </div>
     <div class="terminal-header-text">
       <span>visitor@{host}</span>
     </div>
   </div>
 
-  <div class="terminal-body">
+  <div class="terminal-body" class:minimized-body={!$fullScreen}>
     <InputForm bind:input {host} {handleKeyDown} {handleSubmit} />
 
     {#each commandHistory as ch}
@@ -76,29 +94,35 @@
 <style>
   #terminal-container {
     margin-top: 0;
-    border-radius: 5px;
     min-height: 100vh;
     background-color: var(--background-color-dark);
   }
 
   /* For large desktop/laptop screens */
   @media (min-width: 1200px) {
-    #terminal-container {
+    #terminal-container.minimized-container {
       margin-top: 2rem;
       border-radius: 5px;
       min-height: 90vh;
       background-color: var(--background-color-dark);
     }
 
-    .terminal-body {
+    .terminal-body.minimized-body {
       max-height: 85vh !important;
       padding: 1rem !important;
     }
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-width: 1199.98px) {
     .terminal-body {
       max-height: 80vh !important;
+      padding: 1rem !important;
+    }
+  }
+
+  @media screen and (orientation: portrait) and (max-width: 991.98px) {
+    .terminal-body {
+      max-height: 90vh !important;
       padding: 1rem !important;
     }
   }
@@ -122,6 +146,24 @@
     height: 0.8rem;
     border-radius: 50%;
   }
+
+  .pulse {
+    animation: pulse-animation 2s infinite;
+  }
+
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0);
+    }
+  }
+
+  .window-controls {
+    cursor: pointer;
+  }
+
   .red {
     background-color: #ff544d;
     border: 1px solid #da3c37;
@@ -155,7 +197,7 @@
     overflow-y: auto;
     padding: 0.5rem 1rem;
     margin-top: 0.5rem;
-    max-height: 90vh;
+    max-height: 95vh;
     overflow-y: auto;
     overflow-x: hidden;
   }
