@@ -3,7 +3,7 @@
   export let skills: { skill: string; icon: string }[];
 </script>
 
-<h4>{header}</h4>
+<h3 class="header">{header}</h3>
 <ul>
   {#each skills as { skill, icon }}
     <li class="list-item">
@@ -34,5 +34,11 @@
 
   .icon {
     margin-left: 0.5rem;
+  }
+
+  .header {
+    color: var(--text-color-100);
+    font-weight: 700;
+    font-size: inherit;
   }
 </style>
