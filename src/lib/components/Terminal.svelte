@@ -57,7 +57,7 @@
 <div id="terminal-container" class:minimized-container={!$fullScreen}>
   <div class="terminal-header">
     <div class="buttons">
-      <button class="btn-round red" />
+      <button class="btn-round red" title="Close"></button>
       <button
         class="btn-round window-controls yellow"
         class:pulse={window.screen.width >= 1200}
