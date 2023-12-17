@@ -9,15 +9,9 @@
 </div>
 
 <div>
-  <h3 class="header">AWS Certified Cloud Practitioner</h3>
-  <div class="text">
-    Validation Number:
-    <a
-      class="link-secondary"
-      target="_blank"
-      href="https://aws.amazon.com/verification">R4HHC621S1BEQYCG</a
-    > | 2022-2025
-  </div>
+  <h3 class="header" style="margin-block-end: 1rem;">
+    AWS Certified Developer - Associate
+  </h3>
 </div>
 
 <style>
