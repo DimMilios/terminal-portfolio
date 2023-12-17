@@ -9,17 +9,18 @@
     { skill: 'css', icon: 'css3.svg', category: 'frontend' },
     { skill: 'html', icon: 'html5.svg', category: 'frontend' },
 
-    { skill: 'typescript', icon: 'typescript.svg', category: 'backend' },
-    { skill: 'nodejs', icon: 'nodejs.svg', category: 'backend' },
-    { skill: 'express', icon: 'express.svg', category: 'backend' },
-    { skill: 'go', icon: 'go.svg', category: 'backend' },
     { skill: 'java', icon: 'java.svg', category: 'backend' },
     { skill: 'spring boot', icon: 'spring.svg', category: 'backend' },
     { skill: 'mysql', icon: 'mysql.svg', category: 'backend' },
     { skill: 'postgresql', icon: 'postgresql.svg', category: 'backend' },
+    { skill: 'typescript', icon: 'typescript.svg', category: 'backend' },
+    { skill: 'nodejs', icon: 'nodejs.svg', category: 'backend' },
+    { skill: 'express', icon: 'express.svg', category: 'backend' },
+    { skill: 'go', icon: 'go.svg', category: 'backend' },
 
     { skill: 'docker', icon: 'docker.svg', category: 'other' },
     { skill: 'git', icon: 'git.svg', category: 'other' },
+    { skill: 'aws', icon: 'aws.svg', category: 'other' },
     { skill: 'github', icon: 'github.svg', category: 'other' },
     { skill: 'linux', icon: 'linux.svg', category: 'other' },
   ];
@@ -34,6 +35,6 @@
   }, categories);
 </script>
 
-<SkillsList header="Front End Skills" skills={skillsByCategory.frontend} />
 <SkillsList header="Back End Skills" skills={skillsByCategory.backend} />
+<SkillsList header="Front End Skills" skills={skillsByCategory.frontend} />
 <SkillsList header="Other Skills" skills={skillsByCategory.other} />
