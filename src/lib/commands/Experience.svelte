@@ -15,7 +15,7 @@
     Technology stack consisted of
     <TextIcon
       image={{
-        src: '/icons/angular.svg',
+        src: 'icons/angular.svg',
         alt: 'angular logo',
         width: 22,
         height: 22,
@@ -25,7 +25,7 @@
     on the frontend,
     <TextIcon
       image={{
-        src: '/icons/java.svg',
+        src: 'icons/java.svg',
         alt: 'java logo',
         width: 22,
         height: 22,
@@ -34,7 +34,7 @@
     /> with
     <TextIcon
       image={{
-        src: '/icons/spring.svg',
+        src: 'icons/spring.svg',
         alt: 'spring boot logo',
         width: 22,
         height: 22,
@@ -43,7 +43,7 @@
     /> on the backend,
     <TextIcon
       image={{
-        src: '/icons/mysql.svg',
+        src: 'icons/mysql.svg',
         alt: 'mysql logo',
         width: 22,
         height: 22,
@@ -52,7 +52,7 @@
     /> as a database, and
     <TextIcon
       image={{
-        src: '/icons/github.svg',
+        src: 'icons/github.svg',
         alt: 'github logo',
         width: 22,
         height: 22,
@@ -80,7 +80,7 @@
   <p class="wall">
     Collaborated within a team to develop, deploy, and maintain two vanilla <TextIcon
       image={{
-        src: '/icons/javascript.svg',
+        src: 'icons/javascript.svg',
         alt: 'javascript logo',
         width: 22,
         height: 22,
@@ -88,7 +88,7 @@
       text="JavaScript"
     /> front-end applications and a <TextIcon
       image={{
-        src: '/icons/nodejs.svg',
+        src: 'icons/nodejs.svg',
         alt: 'node.js logo',
         width: 22,
         height: 22,
