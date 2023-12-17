@@ -42,7 +42,7 @@
     Developed a Yjs WebSocket server for VHVCoLab and Playalong front end apps
     using <TextIcon
       image={{
-        src: '/icons/nodejs.svg',
+        src: 'icons/nodejs.svg',
         alt: 'node.js logo',
         width: 22,
         height: 22,
