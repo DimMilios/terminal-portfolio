@@ -1,3 +1,3 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-export const fullScreen = writable(false);
+export const fullScreen = writable(true);

@@ -1,8 +1,9 @@
 <p>Hi, my name is <b>Dimitris Milios</b>!</p>
 <p>I'm a software developer based in Heraklion, Greece 🇬🇷️.</p>
 <p class="big">
-  When I'm not actively waiting for the inevitable AI apocalypse, I'm exercising
-  my passion for software development by building web and CLI apps.
+  When not contemplating the impending AI apocalypse, I channel my enthusiasm
+  for software development, immersing myself in the world of computers and web
+  technologies.
 </p>
 
 <style>
