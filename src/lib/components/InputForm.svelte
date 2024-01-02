@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { closest } from "../util";
+  import { closest } from '../util';
 
   export let host: string;
-  export let input = "";
+  export let input = '';
 
   export let handleKeyDown: (e: KeyboardEvent) => void;
   export let handleSubmit: (e: SubmitEvent) => void;
@@ -12,7 +12,7 @@
     inputRef?.focus();
   };
 
-  $: suggestion = closest(input) ?? "";
+  $: suggestion = closest(input) ?? '';
 </script>
 
 <svelte:document on:click={handleGlobalClick} />
@@ -57,7 +57,7 @@
 
   #terminal-input {
     font-size: 100%;
-    font-family: "Roboto Mono", monospace;
+    font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     margin: 0;
     padding: 0;
